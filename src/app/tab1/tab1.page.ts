@@ -13,24 +13,24 @@ export class Tab1Page implements OnInit{
 
   ngOnInit(){
     this.clients = [{
-      name:"Mike",
+      name:"Frutos secos Yoli",
       cif:"A53897898",
       address:"Av Camilo Jose Cela 22",
-      email:"mike@example.com",
+      email:"frutossyoly@example.com",
       telephone:"918664364",
     },
     {
-      name:"Alex",
+      name:"Sabor a Miel",
       cif:"A369898564",
       address:"Plaza de la Coronación 1",
-      email:"alex@example.com",
+      email:"saboramiel@example.com",
       telephone:"91966897",
     },
     {
-      name:"Sofía",
+      name:"Natural food",
       cif:"A23698745",
       address:"Av Camilo Jose Cela 22",
-      email:"sofi@example.com",
+      email:"naturalfood@example.com",
       telephone:"911234586",
     }];
   }
