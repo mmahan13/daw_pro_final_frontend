@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="tertiary">
+    <ion-title>Pedidos</ion-title>
+   </ion-toolbar>
+   <ion-segment class="segment" scrollable value="pendientes">
+     <ion-segment-button value="pendientes">
+       <ion-label>
+         Pendientes 3
+         <p> 13.00 EUR</p>
+       </ion-label>
+     </ion-segment-button>
+     <ion-segment-button  value="entregados">
+       <ion-label>
+         Entregados 5
+         <p>350.00 EUR</p>
+       </ion-label>
+   </ion-segment-button>
+   </ion-segment>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item-sliding  *ngFor="let row of orderHeader">
+    <ion-item>
+      <ion-toggle class="status-toggle" color="success" checked="true"></ion-toggle>
+      <ion-label>
+        <h2><b>{{row.name}}</b></h2>
+        <h2>Nº Pedido: <b>{{row.number_orders}}</b></h2>
+        <p *ngIf="true">Fecha pedido:  {{ row.created_at}}</p>
+        <p *ngIf="false">Fecha entregado: {{ row.updated_at}}</p>
+      </ion-label>
+      <p slot="end">500.00 EUR</p>
+    </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-item-options side="start">
+      <ion-item-option color="danger" ><ion-icon name="trash"></ion-icon></ion-item-option>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
