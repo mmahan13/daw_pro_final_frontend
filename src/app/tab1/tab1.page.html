@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="tertiary">
+    <ion-title>Clientes</ion-title>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list class="list">
+    <ion-item-sliding *ngFor="let row of clients">
+     <ion-item>
+       <ion-label >
+        <h2><b>{{row.name}}</b></h2>
+        <h3>{{row.cif}}</h3>
+        <h3>{{row.address}}</h3>
+       </ion-label>
+       <ion-button color="success">Nuevo pedido</ion-button>
+     </ion-item>
+     <ion-item-options side="start">
+       <ion-item-option color="danger"><ion-icon name="trash"></ion-icon></ion-item-option>
+     </ion-item-options>
+     </ion-item-sliding>
+   </ion-list>
+ 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+     <ion-fab-button  color="success" >
+       <ion-icon name="add"></ion-icon>
+     </ion-fab-button>
+   </ion-fab>
 </ion-content>
